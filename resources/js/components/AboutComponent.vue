@@ -1,7 +1,10 @@
 <template>
   <v-container fluid>
+    <br />
+
     <!-- Project Info -->
     <div>
+      <h4>Project info:</h4>
       <p>Hoje em dia, uma das maiores preocupações com o meio ambiente tem sido a organização da recolha do lixo que afeta a saúde e o meio ambiente da nossa sociedade. A deteção, monitorização e organização da recolha do lixo é um dos principais problemas atualmente visto nas grandes cidades. A maneira tradicional de monitorizar manualmente os resíduos nas lixeiras é um processo complicado que utiliza bastante esforço humano e tem custos que podem ser facilmente evitados com as novas tecnologias.</p>
       <p>Desta forma, apresentamos como solução um projeto que introduz uma invocação única da Internet das Coisas e que tem como objetivo melhorar a utilização de recursos e diminuir o seu gasto de forma automática. Por isto, o nosso projeto, Smart Trash, é uma ideia inovadora que vai permitir que a recolha de resíduos seja feita de uma melhor forma e mais saudável para o meio ambiente.</p>
       <p>No mundo real, é um caso de uso para as smart cities. Para o Departamento Municipal que tem a responsabilidade da recolha do lixo, este projeto em grande escala poderia ajudar bastante porque permite saber quais os contentores que necessitam de ser recolhidos, assim como as zonas que precisam de ser recolhidas mais frequentemente, fazendo o horário de recolha e dos trabalhadores de forma mais eficiente para que consigamos poupar recursos.</p>

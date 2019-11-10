@@ -11,9 +11,10 @@
     </head>
     <body>
         <div id="app">
-            <welcome-component></welcome-component>
+            <main-component></main-component>
         </div>
     </body>
     <script src="js/app.js"></script>
+
 
 </html>

@@ -10,8 +10,16 @@ window.Vue = require('vue');
 
 import VueRouter from 'vue-router';
 import vuetify from '../../plugins/vuetify'; // path to vuetify export
+import * as VueGoogleMaps from 'vue2-google-maps';
 
 Vue.use(VueRouter);
+
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyDP-etwl9bYjlFssqTB2MoGx-vKfQaj_oo',
+        libraries: 'places'
+    }
+});
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -28,9 +36,14 @@ Vue.use(VueRouter);
 //     require("./components/WelcomeComponent.vue")
 // );
 
-const welcome = Vue.component(
-    'welcome-component',
-    require('./components/WelcomeComponent.vue').default
+const main = Vue.component(
+    'main-component',
+    require('./components/MainComponent.vue').default
+);
+
+const homepage = Vue.component(
+    'homepage-component',
+    require('./components/HomepageComponent.vue').default
 );
 
 const about = Vue.component(
@@ -38,7 +51,10 @@ const about = Vue.component(
     require('./components/AboutComponent.vue').default
 );
 
-const routes = [{ path: '/about', component: about }];
+const routes = [
+    { path: '/about', component: about },
+    { path: '/', component: homepage }
+];
 const router = new VueRouter({
     routes // short for `routes: routes`
 });
@@ -50,7 +66,8 @@ const router = new VueRouter({
 
 const app = new Vue({
     components: {
-        'welcome-component': welcome,
+        'main-component': main,
+        'homepage-component': homepage,
         'about-component': about
     },
     vuetify,
