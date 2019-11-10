@@ -32,7 +32,9 @@
       </v-container>
     </v-content>
     <v-footer color="indigo" app>
-      <span class="white--text">&copy; 2019</span>
+      <span
+        class="white--text"
+      >&copy; This project was developed as part of the curricular unit Next Generation Technologies and Services, from the Masters Degree in Computer Engineering - Mobile Computing</span>
     </v-footer>
   </v-app>
 </template>

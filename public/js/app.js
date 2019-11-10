@@ -1914,6 +1914,93 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AboutComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AboutComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      cards: [{
+        title: "Daniel Rodrigues",
+        src: "https://z-m-scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/11350580_856837901090657_2103519197645713210_n.jpg?_nc_cat=111&_nc_oc=AQnlQwUens0Zdr0cuHZ8bvbYLpGuqGQc7URgkqbGDyTYugj2qGa-1ex8BSfJVx-pLfc&_nc_ad=z-m&_nc_cid=1272&_nc_zor=9&_nc_ht=z-m-scontent.flis5-1.fna&oh=8124777afef24bf593c53bfc86a550ca&oe=5E62875D",
+        flex: 3,
+        facebook: "https://www.facebook.com/profile.php?id=100002933664528",
+        linkedIn: ""
+      }, {
+        title: "Luís Campos",
+        src: "https://z-m-scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/68429144_2322899487757920_4621444209893703680_n.jpg?_nc_cat=104&_nc_oc=AQlw_KsMnJ_MFZa3laR-JJXpRQxFK900j3Qe5dgA2vKLikgqmj5XJ_kgoTxnc-7emaQ&_nc_ad=z-m&_nc_cid=1272&_nc_zor=9&_nc_ht=z-m-scontent.flis5-1.fna&oh=ca1fec54be9140845b275382e9b42130&oe=5E47EA12",
+        flex: 3,
+        facebook: "https://www.facebook.com/mrmoltres",
+        linkedIn: "https://www.linkedin.com/in/lu%C3%ADs-campos-57bb3612b/"
+      }, {
+        title: "Luís Ferreira",
+        src: "https://z-m-scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/46860520_2342398075789029_3334635084178259968_o.jpg?_nc_cat=101&_nc_oc=AQkZktOOd49OKdvHNemz9KOfBDzu6HUuD8ULHnGps40AO1Xd-aybzlFR1Nt9hXvfbkQ&_nc_ad=z-m&_nc_cid=1272&_nc_zor=9&_nc_ht=z-m-scontent.flis5-1.fna&oh=fd91d10fea09565df417018dde667fc0&oe=5E59A5A9",
+        flex: 3,
+        facebook: "https://www.facebook.com/luispaulo.97",
+        linkedIn: "https://www.linkedin.com/in/luispauloferreira/"
+      }, {
+        title: "Rodrigo Santos",
+        src: "https://z-m-scontent.flis5-1.fna.fbcdn.net/v/t1.0-9/12038209_932643853475988_6450784216033743893_n.jpg?_nc_cat=103&_nc_oc=AQlP4yS7cYCvjzOwA0Dbukl34QH3-O7-_qy_FY29tFg5QeB00xO8aUrALqGkQjHnlFo&_nc_ad=z-m&_nc_cid=1272&_nc_zor=9&_nc_ht=z-m-scontent.flis5-1.fna&oh=84260068536b1cc0191c26a52ff98b62&oe=5E530CA1",
+        flex: 3,
+        facebook: "https://www.facebook.com/rodrigo.h.f.santos",
+        linkedIn: "https://www.linkedin.com/in/rodrigohfsantos/"
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WelcomeComponent.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/WelcomeComponent.vue?vue&type=script&lang=js& ***!
@@ -1923,6 +2010,8 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -37932,133 +38021,96 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "vContainer",
+    "v-container",
+    { attrs: { fluid: "" } },
     [
-      _c(
-        "v-card",
-        { staticClass: "mx-auto", attrs: { "max-width": "344", outlined: "" } },
-        [
-          _c(
-            "v-list-item",
-            { attrs: { "three-line": "" } },
-            [
-              _c(
-                "v-list-item-content",
-                [
-                  _c("v-list-item-title", { staticClass: "headline mb-1" }, [
-                    _vm._v("Daniel Rodrigues")
-                  ]),
-                  _vm._v(" "),
-                  _c("v-list-item-subtitle", [
-                    _vm._v("Greyhound divisely hello coldly fonwderfully")
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("v-list-item-avatar", {
-                attrs: { tile: "", size: "80", color: "grey" }
-              })
-            ],
-            1
+      _c("div", [
+        _c("p", [
+          _vm._v(
+            "Hoje em dia, uma das maiores preocupações com o meio ambiente tem sido a organização da recolha do lixo que afeta a saúde e o meio ambiente da nossa sociedade. A deteção, monitorização e organização da recolha do lixo é um dos principais problemas atualmente visto nas grandes cidades. A maneira tradicional de monitorizar manualmente os resíduos nas lixeiras é um processo complicado que utiliza bastante esforço humano e tem custos que podem ser facilmente evitados com as novas tecnologias."
           )
-        ],
-        1
-      ),
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Desta forma, apresentamos como solução um projeto que introduz uma invocação única da Internet das Coisas e que tem como objetivo melhorar a utilização de recursos e diminuir o seu gasto de forma automática. Por isto, o nosso projeto, Smart Trash, é uma ideia inovadora que vai permitir que a recolha de resíduos seja feita de uma melhor forma e mais saudável para o meio ambiente."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "No mundo real, é um caso de uso para as smart cities. Para o Departamento Municipal que tem a responsabilidade da recolha do lixo, este projeto em grande escala poderia ajudar bastante porque permite saber quais os contentores que necessitam de ser recolhidos, assim como as zonas que precisam de ser recolhidas mais frequentemente, fazendo o horário de recolha e dos trabalhadores de forma mais eficiente para que consigamos poupar recursos."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Neste projeto, iremos implementar a solução num contentor de lixo normal. Desta maneira, vamos monitorizar a capacidade em que se encontra o contentor utilizando pelo menos um sensor de distância, sendo enviando uma notificação quando o contentor se encontrar a uma percentagem (70%/80% cheio), ainda por definir. Também, iremos colocar um sensor de temperatura para que em caso de altas temperaturas ou de perigo de incêndio seja enviado uma notificação de alerta, Sensor de Chama e Fogo para caso real de fogo, Sensor dos gases de Dióxido de Carbono (CO2) e Metano (MQ-4) para o controlo do ar. De seguida, instalaremos um sistema de RFID para que quem vá recolher o lixo possa abrir o contentor do lixo, servindo este também como proteção para os aparelhos utilizados. Por fim, vamos guardar toda a informação numa base de dados para que fique armazenado quem recolhe o lixo, as horas em que foi recolhido assim como qual o contentor em que o lixo foi recolhido. Armazenar todos os dados numa base de dados, para que fique guardada toda a informação possível, possibilita que no futuro possamos fazer estudos e calcular estatísticas de modo a melhorar a recolha do lixo."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("h4", [_vm._v("Developed by:")]),
       _vm._v(" "),
       _c(
-        "v-card",
-        { staticClass: "mx-auto", attrs: { "max-width": "344", outlined: "" } },
-        [
-          _c(
-            "v-list-item",
-            { attrs: { "three-line": "" } },
+        "v-row",
+        { attrs: { dense: "" } },
+        _vm._l(_vm.cards, function(card) {
+          return _c(
+            "v-col",
+            { key: card.title, attrs: { cols: card.flex } },
             [
               _c(
-                "v-list-item-content",
+                "v-card",
                 [
-                  _c("v-list-item-title", { staticClass: "headline mb-1" }, [
-                    _vm._v("Luís Campos")
-                  ]),
+                  _c(
+                    "v-img",
+                    {
+                      staticClass: "white--text align-end mx-auto",
+                      attrs: {
+                        src: card.src,
+                        gradient: "to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)",
+                        height: "400px"
+                      }
+                    },
+                    [
+                      _c("v-card-title", {
+                        domProps: { textContent: _vm._s(card.title) }
+                      })
+                    ],
+                    1
+                  ),
                   _vm._v(" "),
-                  _c("v-list-item-subtitle", [
-                    _vm._v("Greyhound divisely hello coldly fonwderfully")
-                  ])
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        { attrs: { icon: "", href: card.facebook } },
+                        [_c("v-icon", [_vm._v("mdi-facebook-box")])],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        { attrs: { icon: "", href: card.linkedIn } },
+                        [_c("v-icon", [_vm._v("mdi-linkedin-box")])],
+                        1
+                      )
+                    ],
+                    1
+                  )
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c("v-list-item-avatar", {
-                attrs: { tile: "", size: "80", color: "grey" }
-              })
+              )
             ],
             1
           )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-card",
-        { staticClass: "mx-auto", attrs: { "max-width": "344", outlined: "" } },
-        [
-          _c(
-            "v-list-item",
-            { attrs: { "three-line": "" } },
-            [
-              _c(
-                "v-list-item-content",
-                [
-                  _c("v-list-item-title", { staticClass: "headline mb-1" }, [
-                    _vm._v("Luís Ferreira")
-                  ]),
-                  _vm._v(" "),
-                  _c("v-list-item-subtitle", [
-                    _vm._v("Greyhound divisely hello coldly fonwderfully")
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("v-list-item-avatar", {
-                attrs: { tile: "", size: "80", color: "grey" }
-              })
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-card",
-        { staticClass: "mx-auto", attrs: { "max-width": "344", outlined: "" } },
-        [
-          _c(
-            "v-list-item",
-            { attrs: { "three-line": "" } },
-            [
-              _c(
-                "v-list-item-content",
-                [
-                  _c("v-list-item-title", { staticClass: "headline mb-1" }, [
-                    _vm._v("Rodrigo Santos")
-                  ]),
-                  _vm._v(" "),
-                  _c("v-list-item-subtitle", [
-                    _vm._v("Greyhound divisely hello coldly fonwderfully")
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("v-list-item-avatar", {
-                attrs: { tile: "", size: "80", color: "grey" }
-              })
-            ],
-            1
-          )
-        ],
+        }),
         1
       )
     ],
@@ -38184,7 +38236,11 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("v-footer", { attrs: { color: "indigo", app: "" } }, [
-        _c("span", { staticClass: "white--text" }, [_vm._v("© 2019")])
+        _c("span", { staticClass: "white--text" }, [
+          _vm._v(
+            "© This project was developed as part of the curricular unit Next Generation Technologies and Services, from the Masters Degree in Computer Engineering - Mobile Computing"
+          )
+        ])
       ])
     ],
     1
@@ -90799,15 +90855,17 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AboutComponent_vue_vue_type_template_id_5049bb1b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AboutComponent.vue?vue&type=template&id=5049bb1b& */ "./resources/js/components/AboutComponent.vue?vue&type=template&id=5049bb1b&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _AboutComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AboutComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/AboutComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AboutComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _AboutComponent_vue_vue_type_template_id_5049bb1b___WEBPACK_IMPORTED_MODULE_0__["render"],
   _AboutComponent_vue_vue_type_template_id_5049bb1b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -90821,6 +90879,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/AboutComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/AboutComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/AboutComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./AboutComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AboutComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
