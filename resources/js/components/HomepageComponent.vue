@@ -3,15 +3,7 @@
     <v-card>
       <v-card-title primary-title>Trash Can #X</v-card-title>
       <v-card-text>Capacity</v-card-text>
-      <v-progress-linear
-        v-model="skill"
-        buffer-value="0"
-        value="60"
-        height="20"
-        striped
-        color="deep-orange"
-        stream
-      >
+      <v-progress-linear buffer-value="0" value="60" height="20" striped color="deep-orange" stream>
         <template v-slot="{ value }">
           <strong>{{ Math.ceil(value) }}%</strong>
         </template>
@@ -46,22 +38,20 @@
           </v-col>
         </v-card-text>
       </v-card-actions>
-      <v-item>
-        <GmapMap
-          :center="{lat:39.734465, lng:-8.821045}"
-          :zoom="17"
-          map-type-id="terrain"
-          style="full-width; height: 400px"
-        >
-          <GmapMarker
-            :position="{lat:39.734465, lng:-8.821045}"
-            :clickable="true"
-            :draggable="true"
-            @click="center={lat:39.734465, lng:-8.821045}"
-          />
-        </GmapMap>
-      </v-item>
     </v-card>
+    <GmapMap
+      :center="{lat:39.734465, lng:-8.821045}"
+      :zoom="17"
+      map-type-id="terrain"
+      style="full-width; height: 400px"
+    >
+      <GmapMarker
+        :position="{lat:39.734465, lng:-8.821045}"
+        :clickable="true"
+        :draggable="true"
+        @click="center={lat:39.734465, lng:-8.821045}"
+      />
+    </GmapMap>
   </v-container>
 </template>
 
