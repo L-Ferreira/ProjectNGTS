@@ -11,6 +11,7 @@ window.Vue = require('vue');
 import VueRouter from 'vue-router';
 import vuetify from '../../plugins/vuetify'; // path to vuetify export
 import * as VueGoogleMaps from 'vue2-google-maps';
+import VueGoogleCharts from 'vue-google-charts';
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,8 @@ Vue.use(VueGoogleMaps, {
         libraries: 'places'
     }
 });
+
+Vue.use(VueGoogleCharts);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -46,6 +49,11 @@ const homepage = Vue.component(
     require('./components/HomepageComponent.vue').default
 );
 
+const stats = Vue.component(
+    'statistics-component',
+    require('./components/StatisticsComponent.vue').default
+);
+
 const about = Vue.component(
     'about-component',
     require('./components/AboutComponent.vue').default
@@ -53,6 +61,7 @@ const about = Vue.component(
 
 const routes = [
     { path: '/about', component: about },
+    { path: '/statistics', component: stats },
     { path: '/', component: homepage }
 ];
 const router = new VueRouter({
@@ -68,7 +77,8 @@ const app = new Vue({
     components: {
         'main-component': main,
         'homepage-component': homepage,
-        'about-component': about
+        'about-component': about,
+        'statistics-component': stats
     },
     vuetify,
     router

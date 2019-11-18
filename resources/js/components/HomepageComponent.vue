@@ -69,7 +69,7 @@
     <v-card>
       <v-list-item three-line>
         <v-list-item-content>
-          <v-card-title primary-title>Trash Can #X</v-card-title>
+          <v-card-title primary-title>Trash Can #Y</v-card-title>
           <v-card-text>Capacity</v-card-text>
           <v-progress-linear
             buffer-value="0"
