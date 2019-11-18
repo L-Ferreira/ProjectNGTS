@@ -1970,6 +1970,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38394,25 +38439,25 @@ var render = function() {
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Hoje em dia, uma das maiores preocupações com o meio ambiente tem sido a organização da recolha do lixo que afeta a saúde e o meio ambiente da nossa sociedade. A deteção, monitorização e organização da recolha do lixo é um dos principais problemas atualmente visto nas grandes cidades. A maneira tradicional de monitorizar manualmente os resíduos nas lixeiras é um processo complicado que utiliza bastante esforço humano e tem custos que podem ser facilmente evitados com as novas tecnologias."
+            "\n      Hoje em dia, uma das maiores preocupações com o meio ambiente\n      tem sido a organização da recolha do lixo que afeta a saúde e o\n      meio ambiente da nossa sociedade. A deteção, monitorização e\n      organização da recolha do lixo é um dos principais problemas\n      atualmente visto nas grandes cidades. A maneira tradicional de\n      monitorizar manualmente os resíduos nas lixeiras é um processo\n      complicado que utiliza bastante esforço humano e tem custos que\n      podem ser facilmente evitados com as novas tecnologias.\n    "
           )
         ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Desta forma, apresentamos como solução um projeto que introduz uma invocação única da Internet das Coisas e que tem como objetivo melhorar a utilização de recursos e diminuir o seu gasto de forma automática. Por isto, o nosso projeto, Smart Trash, é uma ideia inovadora que vai permitir que a recolha de resíduos seja feita de uma melhor forma e mais saudável para o meio ambiente."
+            "\n      Desta forma, apresentamos como solução um projeto que introduz\n      uma invocação única da Internet das Coisas e que tem como\n      objetivo melhorar a utilização de recursos e diminuir o seu\n      gasto de forma automática. Por isto, o nosso projeto, Smart\n      Trash, é uma ideia inovadora que vai permitir que a recolha de\n      resíduos seja feita de uma melhor forma e mais saudável para o\n      meio ambiente.\n    "
           )
         ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "No mundo real, é um caso de uso para as smart cities. Para o Departamento Municipal que tem a responsabilidade da recolha do lixo, este projeto em grande escala poderia ajudar bastante porque permite saber quais os contentores que necessitam de ser recolhidos, assim como as zonas que precisam de ser recolhidas mais frequentemente, fazendo o horário de recolha e dos trabalhadores de forma mais eficiente para que consigamos poupar recursos."
+            "\n      No mundo real, é um caso de uso para as smart cities. Para o\n      Departamento Municipal que tem a responsabilidade da recolha do\n      lixo, este projeto em grande escala poderia ajudar bastante\n      porque permite saber quais os contentores que necessitam de ser\n      recolhidos, assim como as zonas que precisam de ser recolhidas\n      mais frequentemente, fazendo o horário de recolha e dos\n      trabalhadores de forma mais eficiente para que consigamos poupar\n      recursos.\n    "
           )
         ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Neste projeto, iremos implementar a solução num contentor de lixo normal. Desta maneira, vamos monitorizar a capacidade em que se encontra o contentor utilizando pelo menos um sensor de distância, sendo enviando uma notificação quando o contentor se encontrar a uma percentagem (70%/80% cheio), ainda por definir. Também, iremos colocar um sensor de temperatura para que em caso de altas temperaturas ou de perigo de incêndio seja enviado uma notificação de alerta, Sensor de Chama e Fogo para caso real de fogo, Sensor dos gases de Dióxido de Carbono (CO2) e Metano (MQ-4) para o controlo do ar. De seguida, instalaremos um sistema de RFID para que quem vá recolher o lixo possa abrir o contentor do lixo, servindo este também como proteção para os aparelhos utilizados. Por fim, vamos guardar toda a informação numa base de dados para que fique armazenado quem recolhe o lixo, as horas em que foi recolhido assim como qual o contentor em que o lixo foi recolhido. Armazenar todos os dados numa base de dados, para que fique guardada toda a informação possível, possibilita que no futuro possamos fazer estudos e calcular estatísticas de modo a melhorar a recolha do lixo."
+            "\n      Neste projeto, iremos implementar a solução num contentor de\n      lixo normal. Desta maneira, vamos monitorizar a capacidade em\n      que se encontra o contentor utilizando pelo menos um sensor de\n      distância, sendo enviando uma notificação quando o contentor se\n      encontrar a uma percentagem (70%/80% cheio), ainda por definir.\n      Também, iremos colocar um sensor de temperatura para que em caso\n      de altas temperaturas ou de perigo de incêndio seja enviado uma\n      notificação de alerta, Sensor de Chama e Fogo para caso real de\n      fogo, Sensor dos gases de Dióxido de Carbono (CO2) e Metano\n      (MQ-4) para o controlo do ar. De seguida, instalaremos um\n      sistema de RFID para que quem vá recolher o lixo possa abrir o\n      contentor do lixo, servindo este também como proteção para os\n      aparelhos utilizados. Por fim, vamos guardar toda a informação\n      numa base de dados para que fique armazenado quem recolhe o\n      lixo, as horas em que foi recolhido assim como qual o contentor\n      em que o lixo foi recolhido. Armazenar todos os dados numa base\n      de dados, para que fique guardada toda a informação possível,\n      possibilita que no futuro possamos fazer estudos e calcular\n      estatísticas de modo a melhorar a recolha do lixo.\n    "
           )
         ])
       ]),
@@ -38513,89 +38558,147 @@ var render = function() {
       _c(
         "v-card",
         [
-          _c("v-card-title", { attrs: { "primary-title": "" } }, [
-            _vm._v("Trash Can #X")
-          ]),
-          _vm._v(" "),
-          _c("v-card-text", [_vm._v("Capacity")]),
-          _vm._v(" "),
-          _c("v-progress-linear", {
-            attrs: {
-              "buffer-value": "0",
-              value: "60",
-              height: "20",
-              striped: "",
-              color: "deep-orange",
-              stream: ""
-            },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(ref) {
-                  var value = ref.value
-                  return [
-                    _c("strong", [_vm._v(_vm._s(Math.ceil(value)) + "%")])
-                  ]
-                }
-              }
-            ])
-          }),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
           _c(
-            "v-card-actions",
-            { attrs: { centered: "" } },
+            "v-list-item",
+            { attrs: { "three-line": "" } },
             [
               _c(
-                "v-card-text",
+                "v-list-item-content",
                 [
-                  _vm._v("\n        Methane (CH4) level\n        "),
-                  _c("v-col", { staticClass: "display-1" }, [
-                    _vm._v("1880 ppb")
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-card-text",
-                [
-                  _vm._v("\n        Carbon Dioxide (CO2) level\n        "),
-                  _c("v-col", { staticClass: "display-1" }, [_vm._v("200 ppm")])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-card-text",
-                [
-                  _vm._v("\n        Temperature ºC\n        "),
-                  _c("v-col", { staticClass: "display-1" }, [_vm._v("23°C")])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-card-text",
-                [
-                  _vm._v("\n        Relative Humidity (%)\n        "),
+                  _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                    _vm._v("Trash Can #X")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-card-text", [_vm._v("Capacity")]),
+                  _vm._v(" "),
+                  _c("v-progress-linear", {
+                    attrs: {
+                      "buffer-value": "0",
+                      value: "60",
+                      height: "20",
+                      striped: "",
+                      color: "deep-orange",
+                      stream: ""
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(ref) {
+                          var value = ref.value
+                          return [
+                            _c("strong", [
+                              _vm._v(_vm._s(Math.ceil(value)) + "%")
+                            ])
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
                   _c(
-                    "v-col",
+                    "v-card-actions",
+                    { attrs: { centered: "" } },
                     [
                       _c(
-                        "v-progress-circular",
-                        {
-                          attrs: {
-                            rotate: -90,
-                            size: 100,
-                            width: 15,
-                            value: 69,
-                            color: "primary"
-                          }
-                        },
-                        [_vm._v(_vm._s(69))]
+                        "v-card-text",
+                        [
+                          _vm._v(
+                            "\n            Methane (CH4) level\n            "
+                          ),
+                          _c("v-col", { staticClass: "display-1" }, [
+                            _vm._v("1880 ppb")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        [
+                          _vm._v(
+                            "\n            Carbon Dioxide (CO2) level\n            "
+                          ),
+                          _c("v-col", { staticClass: "display-1" }, [
+                            _vm._v("200 ppm")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        [
+                          _vm._v("\n            Temperature ºC\n            "),
+                          _c("v-col", { staticClass: "display-1" }, [
+                            _vm._v("23°C")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        [
+                          _vm._v(
+                            "\n            Relative Humidity (%)\n            "
+                          ),
+                          _c(
+                            "v-col",
+                            [
+                              _c(
+                                "v-progress-circular",
+                                {
+                                  attrs: {
+                                    rotate: -90,
+                                    size: 100,
+                                    width: 15,
+                                    value: 69,
+                                    color: "primary"
+                                  }
+                                },
+                                [_vm._v(_vm._s(69))]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
                       )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c(
+                    "GmapMap",
+                    {
+                      staticStyle: { height: "400px" },
+                      attrs: {
+                        center: { lat: 39.734465, lng: -8.821045 },
+                        zoom: 17,
+                        "map-type-id": "roadmap"
+                      }
+                    },
+                    [
+                      _c("GmapMarker", {
+                        attrs: {
+                          position: { lat: 39.734465, lng: -8.821045 },
+                          clickable: true,
+                          draggable: true
+                        },
+                        on: {
+                          click: function($event) {
+                            _vm.center = { lat: 39.734465, lng: -8.821045 }
+                          }
+                        }
+                      })
                     ],
                     1
                   )
@@ -38609,29 +38712,161 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
       _c(
-        "GmapMap",
-        {
-          staticStyle: { height: "400px" },
-          attrs: {
-            center: { lat: 39.734465, lng: -8.821045 },
-            zoom: 17,
-            "map-type-id": "terrain"
-          }
-        },
+        "v-card",
         [
-          _c("GmapMarker", {
-            attrs: {
-              position: { lat: 39.734465, lng: -8.821045 },
-              clickable: true,
-              draggable: true
-            },
-            on: {
-              click: function($event) {
-                _vm.center = { lat: 39.734465, lng: -8.821045 }
-              }
-            }
-          })
+          _c(
+            "v-list-item",
+            { attrs: { "three-line": "" } },
+            [
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                    _vm._v("Trash Can #X")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-card-text", [_vm._v("Capacity")]),
+                  _vm._v(" "),
+                  _c("v-progress-linear", {
+                    attrs: {
+                      "buffer-value": "0",
+                      value: "36",
+                      height: "20",
+                      striped: "",
+                      color: "deep-orange",
+                      stream: ""
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(ref) {
+                          var value = ref.value
+                          return [
+                            _c("strong", [
+                              _vm._v(_vm._s(Math.ceil(value)) + "%")
+                            ])
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    { attrs: { centered: "" } },
+                    [
+                      _c(
+                        "v-card-text",
+                        [
+                          _vm._v(
+                            "\n            Methane (CH4) level\n            "
+                          ),
+                          _c("v-col", { staticClass: "display-1" }, [
+                            _vm._v("1550 ppb")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        [
+                          _vm._v(
+                            "\n            Carbon Dioxide (CO2) level\n            "
+                          ),
+                          _c("v-col", { staticClass: "display-1" }, [
+                            _vm._v("210 ppm")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        [
+                          _vm._v("\n            Temperature ºC\n            "),
+                          _c("v-col", { staticClass: "display-1" }, [
+                            _vm._v("21°C")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        [
+                          _vm._v(
+                            "\n            Relative Humidity (%)\n            "
+                          ),
+                          _c(
+                            "v-col",
+                            [
+                              _c(
+                                "v-progress-circular",
+                                {
+                                  attrs: {
+                                    rotate: -90,
+                                    size: 100,
+                                    width: 15,
+                                    value: 26,
+                                    color: "primary"
+                                  }
+                                },
+                                [_vm._v(_vm._s(26))]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c(
+                    "GmapMap",
+                    {
+                      staticStyle: { height: "400px" },
+                      attrs: {
+                        center: { lat: 39.7409982, lng: -8.8104804 },
+                        zoom: 17,
+                        "map-type-id": "roadmap"
+                      }
+                    },
+                    [
+                      _c("GmapMarker", {
+                        attrs: {
+                          position: { lat: 39.7409982, lng: -8.8104804 },
+                          clickable: true,
+                          draggable: true
+                        },
+                        on: {
+                          click: function($event) {
+                            _vm.center = { lat: 39.7409982, lng: -8.8104804 }
+                          }
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
         ],
         1
       )
@@ -94124,8 +94359,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\NGTS\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\NGTS\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\ngts\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\ngts\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
