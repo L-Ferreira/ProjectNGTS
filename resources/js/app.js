@@ -12,6 +12,7 @@ import VueRouter from 'vue-router';
 import vuetify from '../../plugins/vuetify'; // path to vuetify export
 import * as VueGoogleMaps from 'vue2-google-maps';
 import VueGoogleCharts from 'vue-google-charts';
+import store from './store/global-store';
 
 Vue.use(VueRouter);
 
@@ -23,21 +24,6 @@ Vue.use(VueGoogleMaps, {
 });
 
 Vue.use(VueGoogleCharts);
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-// Vue.component(
-//     "welcome-component",
-//     require("./components/WelcomeComponent.vue")
-// );
 
 const main = Vue.component(
     'main-component',
@@ -59,27 +45,33 @@ const about = Vue.component(
     require('./components/AboutComponent.vue').default
 );
 
+const login = Vue.component(
+    'login',
+    require('./components/Login.vue').default
+);
+
 const routes = [
     { path: '/about', component: about },
     { path: '/statistics', component: stats },
-    { path: '/', component: homepage }
+    { path: '/', component: homepage, name: 'homepage' },
+    { path: '/login', component: login, name: 'login' }
 ];
 const router = new VueRouter({
-    routes // short for `routes: routes`
+    routes
 });
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
 const app = new Vue({
     components: {
         'main-component': main,
         'homepage-component': homepage,
         'about-component': about,
-        'statistics-component': stats
+        'statistics-component': stats,
+        'login': login
     },
     vuetify,
-    router
+    router,
+    store,
+    created() {
+        this.$store.commit('loadTokenAndUserFromSession');
+    },
 }).$mount('#app');

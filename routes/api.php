@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('login', 'LoginControllerAPI@login');
 Route::middleware('auth:api')->post('logout', 'LoginControllerAPI@logout');
+Route::middleware('auth:api')->get('users/me', 'UserControllerAPI@myProfile');
 
 Route::post('/', function (\Illuminate\Http\Request $request) {
     \Illuminate\Support\Facades\Storage::append("arduino-log.txt",
