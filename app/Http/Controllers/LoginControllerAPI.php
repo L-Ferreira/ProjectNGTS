@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-define('YOUR_SERVER_URL', 'http://projectngts.test:8080');
-
 class LoginControllerAPI extends Controller
 {
     public function login(Request $request)
     {
         $http = new \GuzzleHttp\Client;
-        $response = $http->post(YOUR_SERVER_URL . '/oauth/token', [
+        $response = $http->post(env('YOUR_SERVER_URL') . '/oauth/token', [
             'form_params' => [
                 'grant_type' => 'password',
                 'client_id' => env('CLIENT_ID'),
