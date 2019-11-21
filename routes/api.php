@@ -2,24 +2,21 @@
 
 use Illuminate\Http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+//? Authentication API
+Route::post('login', 'LoginControllerAPI@login');
+Route::middleware('auth:api')->post('logout', 'LoginControllerAPI@logout');
+Route::middleware('auth:api')->get('users/me', 'UserControllerAPI@myProfile');
 
+//? Users API
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login', 'LoginControllerAPI@login');
-Route::middleware('auth:api')->post('logout', 'LoginControllerAPI@logout');
-Route::middleware('auth:api')->get('users/me', 'UserControllerAPI@myProfile');
+Route::put('/user/blockByEmail', 'UserControllerAPI@blockByEmail');
+Route::put('/user/getUserBlock', 'UserControllerAPI@getUserBlock');
+
+//? Helpers API
+Route::post('/generateLog', 'Helpers@generateLog');
 
 Route::post('/', function (\Illuminate\Http\Request $request) {
     \Illuminate\Support\Facades\Storage::append("arduino-log.txt",

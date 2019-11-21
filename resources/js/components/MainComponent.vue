@@ -33,7 +33,7 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Smart Trash</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text v-if="!loggedIn"><router-link to="/login">Login</router-link></v-btn>
+      <v-btn text v-if="!loggedIn"><router-link to="/login" style="color:white; text-decoration:none">Login</router-link></v-btn>
       <v-btn text v-on:click.prevent="logout" v-if="loggedIn">Logout</v-btn>
     </v-app-bar>
 
@@ -76,3 +76,12 @@ export default {
   }
 };
 </script>
+
+<style>
+/* a.router-link-exact-active.router-link-active, a {
+  color: white;
+  text-decoration: none;
+} */
+</style>
+
+

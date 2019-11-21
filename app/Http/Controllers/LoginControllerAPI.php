@@ -26,7 +26,7 @@ class LoginControllerAPI extends Controller
             return json_decode((string) $response->getBody(), true);
         } else {
             return response()->json(
-                ['msg' => 'User credentials are invalid'], $errorCode);
+                ['msg' => 'Credenciais inválidas'], $errorCode);
         }
     }
 
