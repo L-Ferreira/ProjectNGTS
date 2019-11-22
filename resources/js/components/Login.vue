@@ -38,43 +38,38 @@ export default {
       this.isMessageVisible = false;
 
       axios.put("api/user/getUserBlock", { email: this.user.email }).then(response => {
-        this.isBlocked = response.data;
-      });
+          if (response.data == 0) {
+            axios.post("api/login", this.user).then(response => {
+                this.$store.commit("setToken", response.data.access_token);
+                return axios.get("api/users/me");
+              })
+              .then(response => {
+                this.$store.commit("setUser", response.data.data);
+                this.$router.push({ name: "homepage" });
+              })
+              .catch(error => {
+                this.isMessageVisible = true;
+                this.errorMessage = "Credenciais inválidas!";
 
-      if(this.isBlocked == 0) {
-         axios
-        .post("api/login", this.user)
-        .then(response => {
-          this.$store.commit("setToken", response.data.access_token);
-          return axios.get("api/users/me");
-        })
-        .then(response => {
-          this.$store.commit("setUser", response.data.data);
-          this.$router.push({ name: "homepage" });
-        })
-        .catch(error => {
-          this.isMessageVisible = true;
-          this.errorMessage = "Credenciais inválidas!";
+                if (this.user.email && this.user.password) {
+                  this.numeroTentantivas++;
+                }
 
-          if (this.user.email && this.user.password) {
-            this.numeroTentantivas++;
-            console.log(this.numeroTentantivas);
-          }
+                if (this.numeroTentantivas >= 3) {
+                  //! Número de tentativas excedidas
+                  this.errorMessage = "O utilizador " + this.user.email + " excedeu as 3 tentativas de login, sendo bloqueado";
 
-          if (this.numeroTentantivas >= 3) {
-            //! Número de tentativas excedidas
-            this.errorMessage ="O utilizador " + this.user.email +" excedeu as 3 tentativas de login, sendo bloqueado";
-
-            axios.post("api/generateLog", { message: this.errorMessage }).then(response => {
-                axios.put("api/user/blockByEmail/", { email: this.user.email }).then(response => {});
+                  axios.post("api/generateLog", { message: this.errorMessage }) .then(response => {
+                      axios.put("api/user/blockByEmail/", { email: this.user.email }).then(response => {});
+                      });
+                }
               });
+          } else {
+            this.isMessageVisible = true;
+            this.errorMessage = "O utilizador " + this.user.email + " está bloqueado";
           }
         });
-      } else {
-         this.isMessageVisible = true;
-         this.errorMessage ="O utilizador " + this.user.email +" está bloqueado";
-      }
-    },
+    }
   }
 };
 </script>
