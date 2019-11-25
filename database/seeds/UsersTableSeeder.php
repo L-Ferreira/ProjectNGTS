@@ -21,5 +21,10 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => Carbon\Carbon::now(),
             'remember_token' => Str::random(10),
         ]);
+
+        DB::table('trash_cans')->insert([
+            'humidity' => '50',
+            'temperature' => '22.5',
+        ]);
     }
 }

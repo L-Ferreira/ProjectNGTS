@@ -31,7 +31,7 @@
 
             <v-card-text>
               Temperature ºC
-              <v-col class="display-1">23&deg;C</v-col>
+              <v-col class="display-1">{{temperature}}&deg;C</v-col>
             </v-card-text>
 
             <v-card-text>
@@ -65,6 +65,8 @@
         </v-list-item-content>
       </v-list-item>
     </v-card>
+    <br />
+    <v-btn v-on:click.prevent="registerTrashCan" color="primary">Atualizar Dados</v-btn>
     <br />
     <v-card>
       <v-list-item three-line>
@@ -133,3 +135,22 @@
     </v-card>
   </v-container>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      temperature: "",
+      humidity: ""
+    }
+  },
+  methods: {
+    registerTrashCan() {
+      axios.get("api/trashcan/get/1").then(response => {
+        this.temperature = response.data.temperature;
+        this.humidity = response.data.humidity;
+      });
+    }
+  }
+}
+</script>

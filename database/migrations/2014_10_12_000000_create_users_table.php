@@ -24,6 +24,15 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('trash_cans', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('temperature');
+            $table->string('humidity');
+            $table->softDeletes();
+            $table->rememberToken();
+            $table->timestamps();
+        });
     }
 
     /**

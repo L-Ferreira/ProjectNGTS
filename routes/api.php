@@ -24,3 +24,6 @@ Route::post('/', function (\Illuminate\Http\Request $request) {
         "Humidity: " . $request->get("teste", "n/a")
     );
 });
+
+Route::post('/trashcan/register', 'TrashCanController@register');
+Route::get('/trashcan/get/{id}', 'TrashCanController@getTrashCan');
