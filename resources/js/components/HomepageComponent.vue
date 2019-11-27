@@ -151,6 +151,9 @@ export default {
         this.humidity = response.data.humidity;
       });
     }
+  },
+  mounted() {
+    this.registerTrashCan();
   }
 }
 </script>
