@@ -12,6 +12,7 @@ class TrashCanController extends Controller
         $trashcan = TrashCan::findOrFail(1);
         $trashcan->humidity = $request->humidity;
         $trashcan->temperature = $request->temperature;
+        $trashcan->capacity = $request->capacity;
         $trashcan->save();
 
         return $trashcan;

@@ -9,6 +9,6 @@ class TrashCan extends Model
     protected $table = 'trash_cans';
     
     protected $fillable = [
-        'methaneLevel', 'carbonDioxideLevel', 'temperature', 'humidity'
+        'methaneLevel', 'carbonDioxideLevel', 'temperature', 'humidity', 'capacity'
     ];
 }

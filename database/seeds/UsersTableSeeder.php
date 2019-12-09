@@ -25,6 +25,7 @@ class UsersTableSeeder extends Seeder
         DB::table('trash_cans')->insert([
             'humidity' => '50',
             'temperature' => '22.5',
+            'capacity' => '20'
         ]);
     }
 }

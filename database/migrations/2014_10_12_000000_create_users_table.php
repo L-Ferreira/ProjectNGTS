@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('temperature');
             $table->string('humidity');
+            $table->string('capacity');
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
