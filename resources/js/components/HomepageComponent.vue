@@ -7,7 +7,7 @@
           <v-card-text>Capacity</v-card-text>
           <v-progress-linear
             buffer-value="0"
-            value="capacity"
+            v-model="capacity"
             height="20"
             striped
             color="deep-orange"
