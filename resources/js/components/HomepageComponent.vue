@@ -14,7 +14,7 @@
             stream
           >
             <template v-slot="{ value }">
-              <strong>{{ Math.ceil(value) }}%</strong>
+              <strong>{{ capacity }}%</strong>
             </template>
           </v-progress-linear>
           <br />
@@ -43,7 +43,7 @@
                   :width="15"
                   :value="humidity"
                   color="primary"
-                >{{ 69 }}</v-progress-circular>
+                >{{ humidity }}</v-progress-circular>
               </v-col>
             </v-card-text>
           </v-card-actions>
