@@ -7,7 +7,7 @@
           <v-card-text>Capacity</v-card-text>
           <v-progress-linear
             buffer-value="0"
-            value="60"
+            value="capacity"
             height="20"
             striped
             color="deep-orange"
@@ -41,7 +41,7 @@
                   :rotate="-90"
                   :size="100"
                   :width="15"
-                  :value="69"
+                  :value="humidity"
                   color="primary"
                 >{{ 69 }}</v-progress-circular>
               </v-col>
@@ -109,7 +109,7 @@
                   :rotate="-90"
                   :size="100"
                   :width="15"
-                  :value="26"
+                  :value="humidity"
                   color="primary"
                 >{{ 26 }}</v-progress-circular>
               </v-col>
@@ -141,7 +141,8 @@ export default {
   data() {
     return {
       temperature: "",
-      humidity: ""
+      humidity: "",
+      capacity: ""
     }
   },
   methods: {
@@ -149,6 +150,7 @@ export default {
       axios.get("api/trashcan/get/1").then(response => {
         this.temperature = response.data.temperature;
         this.humidity = response.data.humidity;
+        this.capacity = response.data.capacity;
       });
     }
   },
