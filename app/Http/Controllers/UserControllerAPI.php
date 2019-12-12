@@ -27,8 +27,16 @@ class UserControllerAPI extends Controller
 
     public function getUserBlock(Request $request)
     {
+        $user = User::where('email', $request->email)->first();
+        
+        if($user) {
+            return response()->json([
+                'isBanned' => $user->isBanned()
+            ]);
+        }
+
         return response()->json([
-            'isBanned' => User::where('email', $request->email)->firstOrFail()->isBanned()
-        ]);
+            'message' => 'User com o email '. $request->email.' não encontrado'
+        ], 404);         
     }
 }
