@@ -16,15 +16,19 @@ class UserControllerAPI extends Controller
     public function blockByEmail(Request $request)
     {
         $user = User::where('email', $request->email)->firstOrFail();
-        $user->blocked = 1;
-        $user->delete();
-        $user->save();
+
+        $user->ban([
+            'comment' => 'O utilizador excedeu as 3 tentativas de login!',
+            'expired_at' => '+15 seconds',
+        ]);
         
         return response()->json([$user, 200]);
     }
 
     public function getUserBlock(Request $request)
     {
-        return User::where('email', $request->email)->firstOrFail()->blocked;
+        return response()->json([
+            'isBanned' => User::where('email', $request->email)->firstOrFail()->isBanned()
+        ]);
     }
 }

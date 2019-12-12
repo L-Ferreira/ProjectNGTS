@@ -38,7 +38,7 @@ export default {
       this.isMessageVisible = false;
 
       axios.put("api/user/getUserBlock", { email: this.user.email }).then(response => {
-          if (response.data == 0) {
+          if (!response.data.isBanned) {
             axios.post("api/login", this.user).then(response => {
                 this.$store.commit("setToken", response.data.access_token);
                 return axios.get("api/users/me");
@@ -57,7 +57,7 @@ export default {
 
                 if (this.numeroTentantivas >= 3) {
                   //! Número de tentativas excedidas
-                  this.errorMessage = "O utilizador " + this.user.email + " excedeu as 3 tentativas de login, sendo bloqueado";
+                  this.errorMessage = "O utilizador " + this.user.email + " excedeu as 3 tentativas de login, sendo bloqueado!";
 
                   axios.post("api/generateLog", { message: this.errorMessage }) .then(response => {
                       axios.put("api/user/blockByEmail/", { email: this.user.email }).then(response => {});
@@ -66,7 +66,7 @@ export default {
               });
           } else {
             this.isMessageVisible = true;
-            this.errorMessage = "O utilizador " + this.user.email + " está bloqueado";
+            this.errorMessage = "O utilizador " + this.user.email + " está bloqueado!";
           }
         });
     }
