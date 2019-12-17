@@ -9,6 +9,6 @@ class Helpers extends Controller
 {
     public function generateLog(Request $request)
     {
-        Log::channel('syslog')->alert($request->message);
+        Log::channel('papertrail')->alert($request->message);
     }
 }
