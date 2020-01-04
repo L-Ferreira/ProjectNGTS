@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app>
       <v-list dense>
-        <v-list-item link to="/" v-if="loggedIn">
+        <v-list-item link to="/home" v-if="loggedIn">
           <v-list-item-action>
             <v-icon>mdi-home</v-icon>
           </v-list-item-action>
@@ -31,9 +31,13 @@
 
     <v-app-bar app color="indigo" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>Smart Trash</v-toolbar-title>
+      <router-link to="/home" style="color:white; text-decoration:none">
+        <v-toolbar-title>Smart Trash</v-toolbar-title>
+      </router-link>
       <v-spacer></v-spacer>
-      <v-btn text v-if="!loggedIn"><router-link to="/login" style="color:white; text-decoration:none">Login</router-link></v-btn>
+      <v-btn text v-if="!loggedIn">
+        <router-link to="/login" style="color:white; text-decoration:none">Login</router-link>
+      </v-btn>
       <v-btn text v-on:click.prevent="logout" v-if="loggedIn">Logout</v-btn>
     </v-app-bar>
 
@@ -60,19 +64,21 @@ export default {
   }),
   methods: {
     logout() {
-      axios.post("api/logout").then(response => {
-        this.$store.commit("clearUserAndToken");
-        this.$router.push({name: "login"});
-      })
-      .catch(error => {
-        this.$store.commit("clearUserAndToken");
-      });
+      axios
+        .post("api/logout")
+        .then(response => {
+          this.$store.commit("clearUserAndToken");
+          this.$router.push({ name: "login" });
+        })
+        .catch(error => {
+          this.$store.commit("clearUserAndToken");
+        });
     }
   },
   computed: {
     loggedIn() {
       return this.$store.getters.loggedIn;
-    },
+    }
   }
 };
 </script>

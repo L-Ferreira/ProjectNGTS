@@ -1,82 +1,205 @@
 <template>
     <v-container fluid>
         <v-card>
-            <v-list>
-                <v-list-group
-                    v-for="item in items"
-                    :key="item.title"
-                    v-model="item.active"
-                    :prepend-icon="item.action"
-                    no-action
-                >
-                    <template v-slot:activator>
+            <v-container fluid>
+                <v-row dense>
+                    <v-list-item four-line>
                         <v-list-item-content>
-                            <v-list-item-title
-                                v-text="item.title"
-                            ></v-list-item-title>
-                        </v-list-item-content>
-                    </template>
-
-                    <v-list-item
-                        v-for="subItem in item.items"
-                        :key="subItem.title"
-                        @click
-                    >
-                        <v-list-item-content>
-                            <v-list-item-title
-                                v-text="subItem.title"
-                            ></v-list-item-title>
+                            <v-card-title primary-title
+                                >Trash Can #X</v-card-title
+                            >
+                            <v-col :cols="6">
+                                <div class="small">
+                                    <h4>Capacity</h4>
+                                    <line-chart
+                                        :chart-data="datacollectionCapacity"
+                                        :height="130"
+                                    ></line-chart>
+                                </div>
+                                <div class="small">
+                                    <h4>Temperature</h4>
+                                    <line-chart
+                                        :chart-data="datacollectionTemperature"
+                                        :height="130"
+                                    ></line-chart>
+                                </div>
+                            </v-col>
+                            <v-col :cols="6">
+                                <div class="small">
+                                    <h4>Humidity</h4>
+                                    <line-chart
+                                        :chart-data="datacollectionHumidity"
+                                        :height="130"
+                                    ></line-chart>
+                                </div>
+                                <div class="small">
+                                    <h4>Gas</h4>
+                                    <line-chart
+                                        :chart-data="datacollectionGas"
+                                        :height="130"
+                                    ></line-chart>
+                                </div>
+                            </v-col>
                         </v-list-item-content>
                     </v-list-item>
-                </v-list-group>
-            </v-list>
-            <GChart
-                type="ColumnChart"
-                :data="chartData"
-                :options="chartOptions"
-            />
+                </v-row>
+            </v-container>
         </v-card>
     </v-container>
 </template>
 
 <script>
+import LineChart from "./LineChart.js";
+
+var chartLabels = [];
+
+for (let index = 1; index < 11; index++) {
+    var date = new Date();
+    date.setDate(date.getDate() - index);
+    var finalDate =
+        ("0" + (date.getMonth() + 1)).slice(-2) +
+        "/" +
+        ("0" + date.getDate()).slice(-2);
+    chartLabels.push(finalDate);
+}
+
 export default {
+    components: {
+        LineChart
+    },
     data() {
         return {
-            items: [
-                {
-                    action: 'mdi-trash-can',
-                    title: 'Trash Can #X',
-                    items: [
-                        { title: 'List Item' },
-                        { title: 'List Item' },
-                        { title: 'List Item' }
-                    ]
-                },
-                {
-                    action: 'mdi-trash-can',
-                    title: 'Trash Can #Y',
-                    items: [
-                        { title: 'Breakfast & brunch' },
-                        { title: 'New American' },
-                        { title: 'Sushi' }
-                    ]
-                }
-            ],
-            chartData: [
-                ['Year', 'Sales', 'Expenses', 'Profit'],
-                ['2014', 1000, 400, 200],
-                ['2015', 1170, 460, 250],
-                ['2016', 660, 1120, 300],
-                ['2017', 1030, 540, 350]
-            ],
-            chartOptions: {
-                chart: {
-                    title: 'Company Performance',
-                    subtitle: 'Sales, Expenses, and Profit: 2014-2017'
-                }
-            }
+            datacollectionCapacity: {},
+            datacollectionTemperature: {},
+            datacollectionHumidity: {},
+            datacollectionGas: {},
+            statistics: null,
+            temperatureStats: [],
+            humidityStats: [],
+            capacityStats: [],
+            statsDate: null
         };
+    },
+    methods: {
+        getStatistics() {
+            axios.get("api/statistics").then(response => {
+                this.statistics = response.data;
+                var i = 9;
+                this.statistics.forEach(element => {
+                    this.statsDate = element.created_at
+                        .split("-")
+                        .join("/")
+                        .slice(5, element.created_at.length - 9);
+                    if (this.statsDate == chartLabels[i]) {
+                        this.temperatureStats.push(element.temperature);
+                        this.humidityStats.push(element.humidity);
+                        this.capacityStats.push(element.capacity);
+                        i = i - 1;
+                    }
+                });
+            });
+        },
+
+        fillData() {
+            this.datacollectionGas = {
+                labels: [
+                    chartLabels[9],
+                    chartLabels[8],
+                    chartLabels[7],
+                    chartLabels[6],
+                    chartLabels[5],
+                    chartLabels[4],
+                    chartLabels[3],
+                    chartLabels[2],
+                    chartLabels[1],
+                    chartLabels[0]
+                ],
+                datasets: [
+                    {
+                        label: "Gas",
+                        backgroundColor: "#1C76C7",
+                        data: [20, 40, 50, 20, 50, 40]
+                    }
+                ]
+            };
+            this.datacollectionCapacity = {
+                labels: [
+                    chartLabels[9],
+                    chartLabels[8],
+                    chartLabels[7],
+                    chartLabels[6],
+                    chartLabels[5],
+                    chartLabels[4],
+                    chartLabels[3],
+                    chartLabels[2],
+                    chartLabels[1],
+                    chartLabels[0]
+                ],
+                datasets: [
+                    {
+                        label: "Capacity",
+                        backgroundColor: "#1C76C7",
+                        data: this.capacityStats
+                    }
+                ]
+            };
+            this.datacollectionTemperature = {
+                labels: [
+                    chartLabels[9],
+                    chartLabels[8],
+                    chartLabels[7],
+                    chartLabels[6],
+                    chartLabels[5],
+                    chartLabels[4],
+                    chartLabels[3],
+                    chartLabels[2],
+                    chartLabels[1],
+                    chartLabels[0]
+                ],
+                datasets: [
+                    {
+                        label: "Temperature",
+                        backgroundColor: "#1C76C7",
+                        data: this.temperatureStats
+                    }
+                ]
+            };
+            this.datacollectionHumidity = {
+                labels: [
+                    chartLabels[9],
+                    chartLabels[8],
+                    chartLabels[7],
+                    chartLabels[6],
+                    chartLabels[5],
+                    chartLabels[4],
+                    chartLabels[3],
+                    chartLabels[2],
+                    chartLabels[1],
+                    chartLabels[0]
+                ],
+                datasets: [
+                    {
+                        label: "Humidity",
+                        backgroundColor: "#1C76C7",
+                        data: this.humidityStats
+                    }
+                ]
+            };
+        }
+    },
+    created() {
+        this.getStatistics();
+    },
+    mounted() {
+        this.fillData();
     }
 };
 </script>
+
+<style lang="css">
+.small {
+    max-width: 800px;
+    /* max-height: 500px; */
+    margin: 50px auto;
+}
+</style>

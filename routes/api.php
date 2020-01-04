@@ -27,3 +27,7 @@ Route::post('/', function (\Illuminate\Http\Request $request) {
 
 Route::post('/trashcan/register', 'TrashCanController@register');
 Route::get('/trashcan/get/{id}', 'TrashCanController@getTrashCan');
+
+
+//? Statistics
+Route::get('/statistics', 'StatisticController@index');
