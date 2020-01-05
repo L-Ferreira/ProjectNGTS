@@ -1,8 +1,8 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer v-model="drawer" fixed app>
       <v-list dense>
-        <v-list-item link to="/home" v-if="loggedIn">
+        <v-list-item link to="/home" v-if="loggedIn" @click.stop="drawer = !drawer">
           <v-list-item-action>
             <v-icon>mdi-home</v-icon>
           </v-list-item-action>
@@ -10,7 +10,7 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link to="/statistics" v-if="loggedIn">
+        <v-list-item link to="/statistics" v-if="loggedIn" @click.stop="drawer = !drawer">
           <v-list-item-action>
             <v-icon>mdi-chart-line-variant</v-icon>
           </v-list-item-action>
@@ -18,7 +18,7 @@
             <v-list-item-title>Statistics</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link to="/about">
+        <v-list-item link to="/about" @click.stop="drawer = !drawer">
           <v-list-item-action>
             <v-icon>mdi-information</v-icon>
           </v-list-item-action>
@@ -60,7 +60,7 @@ export default {
     source: String
   },
   data: () => ({
-    drawer: null
+    drawer: false
   }),
   methods: {
     logout() {
