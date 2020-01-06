@@ -16,6 +16,7 @@ import store from "./store/global-store";
 import vueCharts from "vue-chartjs";
 
 Vue.use(VueRouter);
+Vue.use(store);
 
 Vue.use(VueGoogleMaps, {
     load: {
@@ -71,14 +72,19 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
-        if (!store.getters.loggedIn) next("/login");
-        else next();
+        if (store.getters.loggedIn) {
+            next();
+            return;
+        }
+        next("/login");
     } else {
+        console.log(store.getters.loggedIn);
         next();
     }
 });
 
 const app = new Vue({
+    store,
     components: {
         "main-component": main,
         "homepage-component": homepage,
@@ -90,7 +96,6 @@ const app = new Vue({
     vuetify,
     vueCharts,
     router,
-    store,
     created() {
         this.$store.commit("loadTokenAndUserFromSession");
     }

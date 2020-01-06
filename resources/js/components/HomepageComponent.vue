@@ -5,18 +5,49 @@
         <v-list-item-content>
           <v-card-title primary-title>Trash Can #X</v-card-title>
           <v-card-text>Capacity</v-card-text>
-          <v-progress-linear
-            buffer-value="0"
-            v-model="capacity"
-            height="20"
-            striped
-            color="deep-orange"
-            stream
-          >
-            <template v-slot="{ value }">
-              <strong>{{ capacity }}%</strong>
-            </template>
-          </v-progress-linear>
+          <div v-if="capacity > 80">
+            <v-progress-linear
+              buffer-value="0"
+              v-model="capacity"
+              height="20"
+              striped
+              color="red"
+              stream
+            >
+              <template v-slot="{ value }">
+                <strong>{{ capacity }}%</strong>
+              </template>
+            </v-progress-linear>
+          </div>
+          <div v-else-if="capacity > 40 && capacity < 80">
+            <v-progress-linear
+              buffer-value="0"
+              v-model="capacity"
+              height="20"
+              striped
+              color="yellow"
+              stream
+            >
+              <template v-slot="{ value }">
+                <strong>{{ capacity }}%</strong>
+              </template>
+            </v-progress-linear>
+          </div>
+          <div v-else>
+            <v-progress-linear
+              buffer-value="0"
+              v-model="capacity"
+              height="20"
+              striped
+              color="deep-orange"
+              stream
+            >
+              <template v-slot="{ value }">
+                <strong>{{ capacity }}%</strong>
+              </template>
+            </v-progress-linear>
+          </div>
+
           <br />
           <v-card-actions centered>
             <v-card-text>
@@ -140,10 +171,10 @@
 export default {
   data() {
     return {
-      temperature: "",
-      humidity: "",
-      capacity: ""
-    }
+      temperature: 0,
+      humidity: 0,
+      capacity: 0
+    };
   },
   methods: {
     registerTrashCan() {
@@ -157,5 +188,5 @@ export default {
   mounted() {
     this.registerTrashCan();
   }
-}
+};
 </script>
