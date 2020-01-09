@@ -13,8 +13,13 @@ class CreateStatisticsTable extends Migration
      */
     public function up()
     {
-        Schema::create('statistics', function (Blueprint $table) {
+        Schema::table('statistics', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('trash_can');
+            $table->integer('temperature');
+            $table->integer('humidity');
+            $table->integer('capacity');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -27,5 +32,6 @@ class CreateStatisticsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('statistics');
+
     }
 }
