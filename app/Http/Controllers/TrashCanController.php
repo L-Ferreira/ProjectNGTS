@@ -9,7 +9,7 @@ class TrashCanController extends Controller
 {
     public function register(Request $request)
     {
-        $trashcan = TrashCan::findOrFail(1);
+        $trashcan = new TrashCan;
         $trashcan->humidity = $request->humidity;
         $trashcan->temperature = $request->temperature;
         $trashcan->capacity = $request->capacity;

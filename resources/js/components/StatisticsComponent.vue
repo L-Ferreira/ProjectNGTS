@@ -86,6 +86,7 @@ export default {
             this.capacityStats.push(element.capacity);
             i = i - 1;
           }
+          console.log(this.capacityStats);
         });
 
         //Assign capacity values to chart
