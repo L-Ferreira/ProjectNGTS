@@ -18,8 +18,8 @@ class TrashCanController extends Controller
         return $trashcan;
     }
 
-    public function getTrashCan($id)
+    public function getTrashCan()
     {
-        return TrashCan::findOrFail($id);
+        return TrashCan::latest()->first();
     }
 }

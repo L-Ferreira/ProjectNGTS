@@ -110,7 +110,7 @@ export default {
   },
   methods: {
     registerTrashCan() {
-      axios.get("api/trashcan/get/1").then(response => {
+      axios.get("api/trashcan/get/").then(response => {
         this.temperature = response.data.temperature;
         this.humidity = response.data.humidity;
         this.capacity = response.data.capacity;

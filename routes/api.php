@@ -26,7 +26,7 @@ Route::post('/', function (\Illuminate\Http\Request $request) {
 });
 
 Route::post('/trashcan/register', 'TrashCanController@register');
-Route::get('/trashcan/get/{id}', 'TrashCanController@getTrashCan');
+Route::get('/trashcan/get/', 'TrashCanController@getTrashCan');
 
 
 //? Statistics
