@@ -31,3 +31,4 @@ Route::get('/trashcan/get/', 'TrashCanController@getTrashCan');
 
 //? Statistics
 Route::get('/statistics', 'StatisticController@index');
+Route::get('/statistics/create', 'StatisticController@create');

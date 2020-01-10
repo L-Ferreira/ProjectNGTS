@@ -6,9 +6,8 @@
           <v-list-item four-line>
             <v-list-item-content>
               <v-card-text>
-                <div>Statistics from the last 10 days</div>
+                <div>Statistics from the last 15 days</div>
                 <p class="display-1 text--primary">Trash Can #X</p>
-                <div class="text--primary">All the values are collected at 11pm</div>
               </v-card-text>
               <v-col :cols="6">
                 <div class="small">
@@ -41,17 +40,18 @@
 <script>
 import LineChart from "./LineChart.js";
 
-var chartLabels = [];
+// var chartLabels = [];
 
-for (let index = 1; index < 11; index++) {
-  var date = new Date();
-  date.setDate(date.getDate() - index);
-  var finalDate =
-    ("0" + (date.getMonth() + 1)).slice(-2) +
-    "/" +
-    ("0" + date.getDate()).slice(-2);
-  chartLabels.push(finalDate);
-}
+// for (let index = 1; index < 11; index++) {
+//   var date = new Date();
+//   date.setDate(date.getHours() - index);
+//   console.log(date.setDate(date.getHours() - index));
+//   var finalDate =
+//     ("0" + (date.getMonth() + 1)).slice(-2) +
+//     "/" +
+//     ("0" + date.getDate()).slice(-2);
+//   chartLabels.push(finalDate);
+// }
 
 export default {
   components: {
@@ -67,10 +67,16 @@ export default {
       temperatureStats: [],
       humidityStats: [],
       capacityStats: [],
-      statsDate: null
+      statsDate: null,
+      chartLabels: []
     };
   },
   methods: {
+    registerStatistics() {
+      axios.get("api/statistics/create").then(response => {
+        console.log(response);
+      });
+    },
     getStatistics() {
       axios.get("api/statistics").then(response => {
         this.statistics = response.data;
@@ -79,30 +85,16 @@ export default {
           this.statsDate = element.created_at
             .split("-")
             .join("/")
-            .slice(5, element.created_at.length - 9);
-          if (this.statsDate == chartLabels[i]) {
-            this.temperatureStats.push(element.temperature);
-            this.humidityStats.push(element.humidity);
-            this.capacityStats.push(element.capacity);
-            i = i - 1;
-          }
-          console.log(this.capacityStats);
+            .slice(5, element.created_at.length - 3);
+          this.chartLabels.push(this.statsDate + "h");
+          this.temperatureStats.push(element.temperature);
+          this.humidityStats.push(element.humidity);
+          this.capacityStats.push(element.capacity);
         });
-
+        this.chartLabels.reverse();
         //Assign capacity values to chart
         this.datacollectionCapacity = {
-          labels: [
-            chartLabels[9],
-            chartLabels[8],
-            chartLabels[7],
-            chartLabels[6],
-            chartLabels[5],
-            chartLabels[4],
-            chartLabels[3],
-            chartLabels[2],
-            chartLabels[1],
-            chartLabels[0]
-          ],
+          labels: this.chartLabels,
           datasets: [
             {
               label: "Capacity",
@@ -114,41 +106,37 @@ export default {
 
         //Assign gas values to chart
         this.datacollectionGas = {
-          labels: [
-            chartLabels[9],
-            chartLabels[8],
-            chartLabels[7],
-            chartLabels[6],
-            chartLabels[5],
-            chartLabels[4],
-            chartLabels[3],
-            chartLabels[2],
-            chartLabels[1],
-            chartLabels[0]
-          ],
+          labels: this.chartLabels,
           datasets: [
             {
               label: "Gas",
               backgroundColor: "#1C76C7",
-              data: [20, 40, 50, 20, 50, 40]
+              data: [
+                20,
+                30,
+                40,
+                30,
+                20,
+                30,
+                40,
+                30,
+                20,
+                30,
+                40,
+                30,
+                20,
+                30,
+                40,
+                30,
+                20
+              ]
             }
           ]
         };
 
         //Assign temperature values to chart
         this.datacollectionTemperature = {
-          labels: [
-            chartLabels[9],
-            chartLabels[8],
-            chartLabels[7],
-            chartLabels[6],
-            chartLabels[5],
-            chartLabels[4],
-            chartLabels[3],
-            chartLabels[2],
-            chartLabels[1],
-            chartLabels[0]
-          ],
+          labels: this.chartLabels,
           datasets: [
             {
               label: "Temperature",
@@ -160,18 +148,7 @@ export default {
 
         //Assign humidity values to chart
         this.datacollectionHumidity = {
-          labels: [
-            chartLabels[9],
-            chartLabels[8],
-            chartLabels[7],
-            chartLabels[6],
-            chartLabels[5],
-            chartLabels[4],
-            chartLabels[3],
-            chartLabels[2],
-            chartLabels[1],
-            chartLabels[0]
-          ],
+          labels: this.chartLabels,
           datasets: [
             {
               label: "Humidity",
@@ -189,6 +166,10 @@ export default {
     } catch (e) {
       console.log(e);
     }
+    window.setInterval(() => {
+      this.registerStatistics();
+      this.getStatistics();
+    }, 300000);
   }
 };
 </script>
