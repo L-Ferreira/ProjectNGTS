@@ -73,7 +73,7 @@ class StatisticController extends Controller
         else {
             $data = TrashCan::get();
             foreach ($data as $value) {
-                if ($value->created_at > $last_trash_can->created_at) {
+
                     $statistic = new Statistic;
                     $statistic->trash_can = 1;
                     $statistic->humidity = $value->humidity;
@@ -81,7 +81,7 @@ class StatisticController extends Controller
                     $statistic->capacity = $value->capacity;
                     $statistic->created_at = $value->created_at;
                     $statistic->save();
-                }
+
             }
         }
 
