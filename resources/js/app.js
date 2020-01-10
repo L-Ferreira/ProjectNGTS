@@ -14,6 +14,10 @@ import * as VueGoogleMaps from "vue2-google-maps";
 import VueGoogleCharts from "vue-google-charts";
 import store from "./store/global-store";
 import vueCharts from "vue-chartjs";
+import Toast from "vue-toastification";
+// Import the CSS or use your own!
+import "vue-toastification/dist/index.css";
+Vue.use(Toast);
 
 Vue.use(VueRouter);
 Vue.use(store);
