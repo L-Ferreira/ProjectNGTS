@@ -183,7 +183,7 @@ export default {
         }
         window.setInterval(() => {
             this.registerStatistics();
-        }, 30000);
+        }, 10000);
     }
 };
 </script>

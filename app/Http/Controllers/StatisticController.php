@@ -64,7 +64,6 @@ class StatisticController extends Controller
                         $statistic->humidity = $value->humidity;
                         $statistic->temperature = $value->temperature;
                         $statistic->capacity = $value->capacity;
-                        $statistic->created_at = $value->created_at;
                         $statistic->save();
                     }
                 }
@@ -79,7 +78,6 @@ class StatisticController extends Controller
                     $statistic->humidity = $value->humidity;
                     $statistic->temperature = $value->temperature;
                     $statistic->capacity = $value->capacity;
-                    $statistic->created_at = $value->created_at;
                     $statistic->save();
 
             }
