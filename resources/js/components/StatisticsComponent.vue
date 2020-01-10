@@ -12,7 +12,7 @@
               <v-col :cols="6">
                 <div class="small">
                   <h4>Capacity</h4>
-                  <line-chart :chart-data="datacollectionCapacity" :height="130"></line-chart>
+                  <line-chart :chart-data="datacollectionCapacity" :height="130" :bind="true"></line-chart>
                 </div>
                 <div class="small">
                   <h4>Temperature</h4>
@@ -168,7 +168,6 @@ export default {
     }
     window.setInterval(() => {
       this.registerStatistics();
-      this.getStatistics();
     }, 300000);
   }
 };
