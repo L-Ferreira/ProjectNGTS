@@ -50,14 +50,30 @@ class StatisticController extends Controller
     {
         $last_trash_can = TrashCan::latest()->first();
         $last_statistic = Statistic::latest()->first();
-        $data = TrashCan::where('created_at', '>', $last_statistic->created_at)->get();
-        // TODO
-        // Se a data da ultimo trash_can for maior que a da ultima estatistica ent ok, else nada,
-        // se for maior então percorrer ate encontrar uma que seja menor que a ultima estatistica, e só ai inserir.
-        // Alias juntar todos e fazer media e depois inserir.
-        if ($last_trash_can->created_at >= $last_statistic->created_at) {
+        if ($last_statistic) {
+            $data = TrashCan::where('created_at', '>', $last_statistic->created_at)->get();
+            // TODO
+            // Se a data da ultimo trash_can for maior que a da ultima estatistica ent ok, else nada,
+            // se for maior então percorrer ate encontrar uma que seja menor que a ultima estatistica, e só ai inserir.
+            // Alias juntar todos e fazer media e depois inserir.
+            if ($last_trash_can->created_at >= $last_statistic->created_at) {
+                foreach ($data as $value) {
+                    if ($value->created_at > $last_statistic->created_at) {
+                        $statistic = new Statistic;
+                        $statistic->trash_can = 1;
+                        $statistic->humidity = $value->humidity;
+                        $statistic->temperature = $value->temperature;
+                        $statistic->capacity = $value->capacity;
+                        $statistic->created_at = $value->created_at;
+                        $statistic->save();
+                    }
+                }
+            }
+        }
+        else {
+            $data = TrashCan::get();
             foreach ($data as $value) {
-                if ($value->created_at > $last_statistic->created_at) {
+                if ($value->created_at > $last_trash_can->created_at) {
                     $statistic = new Statistic;
                     $statistic->trash_can = 1;
                     $statistic->humidity = $value->humidity;
@@ -68,6 +84,7 @@ class StatisticController extends Controller
                 }
             }
         }
+
 
         return $data;
      }
